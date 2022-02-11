@@ -38,7 +38,7 @@ batch = np.zeros(x.shape[0]) * -1
 #                  embedding them to a latent space. The trained model can be used to map new data,
 #                  e.g., from new patients that have not been seen during training scPhere
 #                  (assuming patient is the major batch vector)
-model = SCPHERE(n_gene=x.shape[1], n_batch=0, batch_invariant=False,
+model = SCPHERE(n_cells=x.shape[0], n_gene=x.shape[1], n_batch=0, batch_invariant=False,
                 z_dim=2, latent_dist='vmf',
                 observation_dist='nb', seed=0)
 

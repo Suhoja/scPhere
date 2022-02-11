@@ -12,7 +12,7 @@ MAX_SIGMA_SQUARE = 1e10
 
 # ==============================================================================
 class SCPHERE(object):
-    def __init__(self, n_gene, n_batch=None, z_dim=2,
+    def __init__(self, n_cells, n_gene, n_batch=None, z_dim=2,
                  encoder_layer=None, decoder_layer=None, activation=tf.nn.elu,
                  latent_dist='vmf', observation_dist='nb',
                  batch_invariant=False, seed=0):
@@ -31,7 +31,7 @@ class SCPHERE(object):
         # placeholder for gene expression data
         # self.x = tf.compat.v1.placeholder(tf.float32,
         #                                   shape=[None, n_gene], name='x')
-        self.x = tf.Variable(tf.zeros(shape=[None, n_gene], dtype=tf.dtypes.float32, name='x'))
+        self.x = tf.Variable(tf.zeros(shape=[n_cells, n_gene], dtype=tf.dtypes.float32, name='x'))
 
         self.z_dim, self.encoder_layer, self.decoder_layer, self.activation, \
             self.latent_dist, self.observation_dist = \
@@ -51,13 +51,14 @@ class SCPHERE(object):
             #                                          shape=[None, None],
             #                                          name='batch')
 
-            self.batch_id = tf.Variable(tf.zeros(shape=[None, None], dtype=tf.dtypes.int32, name='batch'))          
+            self.batch_id = tf.Variable(tf.zeros(shape=[n_cells, n_batch], dtype=tf.dtypes.int32, name='batch'))          
             self.batch = self.multi_one_hot(self.batch_id, self.n_batch)
         else:
             # self.batch_id = tf.compat.v1.placeholder(tf.int32,
             #                                          shape=[None],
             #                                          name='batch')
-            self.batch_id = tf.Variable(tf.zeros(shape=[None], dtype=tf.dtypes.int32, name='batch'))   
+            
+            self.batch_id = tf.Variable(tf.zeros(shape=[n_cells], dtype=tf.dtypes.int32, name='batch'))   
             self.batch = tf.one_hot(self.batch_id, self.n_batch[0])
 
         self.library_size = tf.reduce_sum(self.x, axis=1, keepdims=True,
