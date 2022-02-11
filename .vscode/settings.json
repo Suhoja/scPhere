@@ -1,0 +1,4 @@
+{
+    "python.disableInstallationCheck": true,
+    "python.envFile": "/home/users/nlaabid/miniconda3/envs"
+}
