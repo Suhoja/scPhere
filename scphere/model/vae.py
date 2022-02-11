@@ -166,7 +166,7 @@ class SCPHERE(object):
         return z_mu, z_sigma_square
 
     def _decoder(self, z, batch):
-        regularizer = tf.contrib.layers.l2_regularizer(scale=0.01)
+        regularizer = tf.keras.regularizers.l2(l=0.01)
 
         z = tf.concat([z, batch], 1)
         with tf.name_scope('decoder-net'):
