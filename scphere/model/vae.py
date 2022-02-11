@@ -57,7 +57,7 @@ class SCPHERE(object):
             # self.batch_id = tf.compat.v1.placeholder(tf.int32,
             #                                          shape=[None],
             #                                          name='batch')
-            
+
             self.batch_id = tf.Variable(tf.zeros(shape=[n_cells], dtype=tf.dtypes.int32, name='batch'))   
             self.batch = tf.one_hot(self.batch_id, self.n_batch[0])
 
@@ -120,7 +120,7 @@ class SCPHERE(object):
         self.saver = tf.compat.v1.train.Saver()
 
     def _encoder(self, x, batch):
-        regularizer = tf.contrib.layers.l2_regularizer(scale=0.01)
+        regularizer = tf.keras.regularizers.l2(l=0.01)
 
         if self.observation_dist == 'nb':
             x = tf.math.log1p(x)
