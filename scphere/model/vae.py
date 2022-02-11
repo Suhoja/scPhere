@@ -230,7 +230,7 @@ class SCPHERE(object):
 
     def _depth_regularizer(self, batch):
         with tf.name_scope('depth-regularizer'):
-            samples = tf.random.poisson(self.x * 0.2, [1])
+            samples = tf.random.poisson(lam=self.x * 0.2, shape=[1])
             samples = tf.reshape(samples, tf.shape(self.x))
             z_mu1, z_sigma_square1 = self._make_encoder_copy(
                 tf.nn.relu(self.x - samples), batch)
