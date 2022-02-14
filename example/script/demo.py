@@ -10,7 +10,7 @@ from scphere.util.plot import plot_trace
 # Preparing a sparse matrix and using ~2000 variable genes for efficiency. 
 # Data can be downloaded from single cell portal (login with a Google account):
 # https://singlecell.broadinstitute.org/single_cell/study/SCP551/scphere#study-download
-data_dir = './example/data/'
+data_dir = '../data/'
 mtx = data_dir + 'cd14_monocyte_erythroid.mtx'
 x = read_mtx(mtx)
 x = x.transpose().todense()
@@ -51,7 +51,7 @@ trainer = Trainer(model=model, x=x, batch_id=batch, max_epoch=250,
 trainer.train()
 
 # save the trained model
-save_path = './example/demo-out/'
+save_path = '../demo-out/'
 
 model_name = save_path + 'cd14_mono_eryth_model_250epoch'
 model.save_sess(model_name)
