@@ -1,0 +1,18 @@
+# VScode files
+.vscode
+
+# Python files
+.ipynb_checkpoints
+checkpoint
+
+
+# Exclude system specific thumbnail and other folder metadata
+.DS_Store
+.DS_Store?
+._*
+
+
+# remove egg-info related files
+scPhere.egg-info
+build
+dist
