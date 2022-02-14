@@ -4,6 +4,7 @@
 # Python files
 .ipynb_checkpoints
 checkpoint
+__pycache__
 
 # Exclude system specific thumbnail and other folder metadata
 .DS_Store
