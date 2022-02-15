@@ -10,7 +10,8 @@ Note: you can choose a `<custom_name>`for the environment or run the command abo
 
 # Check Python installations
 
-- Check Python installations by executing the script: `python example/script/demo.py`
+- Go to the script directory (needed because the script imports data files with relative paths): `cd example/script`
+- Check Python installations by executing the script: `python demo.py`
 
 # Install R dependencies from the script
 

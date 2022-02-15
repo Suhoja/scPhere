@@ -10,6 +10,7 @@ from scphere.util.plot import plot_trace
 # Preparing a sparse matrix and using ~2000 variable genes for efficiency. 
 # Data can be downloaded from single cell portal (login with a Google account):
 # https://singlecell.broadinstitute.org/single_cell/study/SCP551/scphere#study-download
+
 data_dir = '../data/'
 mtx = data_dir + 'cd14_monocyte_erythroid.mtx'
 x = read_mtx(mtx)

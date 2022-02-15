@@ -14,7 +14,7 @@ setwd("densitycut")
 install.packages("devtools", dependencies = TRUE, repos = "http://cran.us.r-project.org")
 library(devtools)
 build()
-install()
+# install()
 
 unlink('densitycut')
 unlink('densitycut_0.0.1.tar.gz')
