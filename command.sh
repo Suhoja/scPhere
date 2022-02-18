@@ -11,5 +11,17 @@
 # pip install matplotlib
 
 create conda env from yml file
-fun python setup.py
+run python setup.py
 run r script to download and install r dependencies
+
+
+### new
+conda create --name scphere python=3.6.8
+conda activate scphere
+pip install numpy
+pip install matplotlib
+pip install cython
+pip install scipy
+pip install pandas
+pip install tensorflow==1.14.0
+python setup.py install # run from beginning?

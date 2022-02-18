@@ -14,5 +14,5 @@ Note: you can choose a `<custom_name>`for the environment or run the command abo
 
 # Install R dependencies from the script
 
-- Run: `Rscript install-densitycut.r`
+- Run (this can take up to 10 min): `Rscript install-densitycut.r`
 - Run `plot.ipynb`to test the R installation.
