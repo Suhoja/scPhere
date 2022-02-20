@@ -17,3 +17,14 @@ Note: you can choose a `<custom_name>`for the environment or run the command abo
 
 - Run: `Rscript install-densitycut.r`
 - Run `plot.ipynb`to test the R installation.
+
+# Installation on Mac - Intel processor
+
+- R (and packages) might require changing the default C compiler used in the system (and accordingly the `\.R\Makevars` used to configure R). My `Makevars` file is as follows:
+
+` 
+CC=/usr/local/opt/llvm/bin/clang
+CXX=/usr/local/opt/llvm/bin/clang++
+# Also potentially CXX11 (for C++11 compiler)
+CXX11=/usr/local/opt/llvm/bin/clang++ 
+` 
