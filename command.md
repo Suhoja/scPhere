@@ -16,7 +16,7 @@ Note: you can choose a `<custom_name>` for the environment or run the command ab
 # Install R dependencies from the script
 
 - Run: `Rscript install-densitycut.r`
-- Run `plot.ipynb`to test the R installation.
+- Run `plot-original.ipynb`to test the R installation.
 
 # Installation on Mac - Intel processor
 
