@@ -1,6 +1,7 @@
 # Install Python dependencies from conda environment
 
 - Run: `conda env create --name <custom_name> --file environment.yml`
+- Activate the environment before continuing: `conda activate <custom_name>`
 
 Note: you can choose a `<custom_name>` for the environment or run the command above without specifying a name, in which case it will use the environment file specified in the yaml file (scphere).
 
@@ -15,6 +16,7 @@ Note: you can choose a `<custom_name>` for the environment or run the command ab
 
 # Install R dependencies from the script
 
+- Run `conda install -c r r-essentials` to get a version of R in  conda environment. 
 - Run: `Rscript install-densitycut.r`
 - Run `plot-original.ipynb`to test the R installation.
 
